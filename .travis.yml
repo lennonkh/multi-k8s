@@ -2,6 +2,7 @@ sudo: required
 services:
   - docker
 before_install:
+  - openssl aes-256-cbc -K $encrypted_86ee83302534_key -iv $encrypted_86ee83302534_iv -in tok.json.enc -out tok.json -d
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gloud components update kubectl
